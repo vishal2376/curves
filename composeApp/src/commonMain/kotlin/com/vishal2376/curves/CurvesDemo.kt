@@ -31,7 +31,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.Path
 import androidx.compose.ui.graphics.drawscope.DrawScope
+import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -107,32 +109,22 @@ fun CurvesDemo() {
 					center = t2
 				)
 				drawCircle(
-					colors.tertiary,
+					colors.error,
 					radius = 20f,
 					center = t3
 				)
 
-				// draw traced curve up to t
-				val steps = 100
-				var prev: Offset? = null
-
-				for (i in 0..(steps * t).toInt()) {
-					val tt = i / steps.toFloat()
-
-					val q1 = lerpOffset(p0, p1, tt)
-					val q2 = lerpOffset(p1, p2, tt)
-					val point = lerpOffset(q1, q2, tt)
-
-					prev?.let {
-						drawLine(
-							color = colors.primary,
-							start = it,
-							end = point,
-							strokeWidth = 6f
-						)
-					}
-					prev = point
+				// draw curve
+				val path = Path().apply {
+					moveTo(p0.x, p0.y)
+					quadraticTo(p1.x, p1.y, p2.x, p2.y)
 				}
+
+				drawPath(
+					path = path,
+					color = colors.primary,
+					style = Stroke(width = 6f)
+				)
 			}
 
 			Column(
