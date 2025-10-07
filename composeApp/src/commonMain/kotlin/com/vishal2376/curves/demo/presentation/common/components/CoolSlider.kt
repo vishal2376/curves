@@ -1,4 +1,4 @@
-package com.vishal2376.curves.app.presentation.components
+package com.vishal2376.curves.demo.presentation.common.components
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -54,6 +54,6 @@ fun CoolSlider(value: Float, onValueChange: (Float) -> Unit, label: String, colo
 			}
 		)
 
-		Text(text = value.toString().take(3))
+		Text(text = value.toString().take(3),color = MaterialTheme.colorScheme.onPrimaryContainer)
 	}
 }

@@ -1,4 +1,4 @@
-package com.vishal2376.curves.app.presentation.utils
+package com.vishal2376.curves.demo.presentation.common.utils
 
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.drawscope.DrawScope

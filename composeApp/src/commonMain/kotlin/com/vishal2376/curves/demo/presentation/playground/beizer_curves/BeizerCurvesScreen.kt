@@ -1,0 +1,149 @@
+package com.vishal2376.curves.demo.presentation.playground.beizer_curves
+
+import androidx.compose.foundation.Canvas
+import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.Button
+import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Text
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableFloatStateOf
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.geometry.Offset
+import androidx.compose.ui.graphics.Path
+import androidx.compose.ui.graphics.drawscope.Stroke
+import androidx.compose.ui.unit.dp
+import com.vishal2376.curves.demo.presentation.common.components.CoolSlider
+import com.vishal2376.curves.demo.presentation.common.utils.lerpOffset
+
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
+fun BeizerCurveScreen() {
+	val colors = MaterialTheme.colorScheme
+
+	// interpolation factor
+	var t by remember { mutableStateOf(0f) }
+
+	// points
+	var a by remember { mutableFloatStateOf(0.2f) }
+	var b by remember { mutableFloatStateOf(0.5f) }
+	var c by remember { mutableFloatStateOf(0.8f) }
+
+
+	Column(
+		modifier = Modifier.fillMaxSize()
+			.background(colors.background)
+			.padding(16.dp)
+	) {
+		Canvas(
+			modifier = Modifier
+				.weight(1f)
+				.fillMaxWidth()
+				.padding(vertical = 16.dp)
+		) {
+
+			val p0 = Offset(size.width * a, size.height * 0.7f)
+			val p1 = Offset(size.width * b, size.height * 0.2f)
+			val p2 = Offset(size.width * c, size.height * 0.7f)
+
+			val t1 = lerpOffset(p0, p1, t)
+			val t2 = lerpOffset(p1, p2, t)
+			val t3 = lerpOffset(t1, t2, t)
+
+			// draw lines
+			drawLine(colors.primaryContainer, p0, p1, strokeWidth = 8f)
+			drawLine(colors.primaryContainer, p1, p2, strokeWidth = 8f)
+			drawLine(colors.primaryContainer, t1, t2, strokeWidth = 8f)
+
+			// draw points
+			drawCircle(colors.primary, radius = 20f, center = p0)
+			drawCircle(colors.primary, radius = 20f, center = p1)
+			drawCircle(colors.primary, radius = 20f, center = p2)
+
+			// draw intermediate points
+			drawCircle(
+				colors.secondary,
+				radius = 14f,
+				center = t1
+			)
+			drawCircle(
+				colors.secondary,
+				radius = 14f,
+				center = t2
+			)
+			drawCircle(
+				colors.error,
+				radius = 20f,
+				center = t3
+			)
+
+			// draw curve
+			val path = Path().apply {
+				moveTo(p0.x, p0.y)
+				quadraticTo(p1.x, p1.y, p2.x, p2.y)
+			}
+
+			drawPath(
+				path = path,
+				color = colors.primary,
+				style = Stroke(width = 6f)
+			)
+		}
+
+		Column(
+			modifier = Modifier.fillMaxWidth()
+				.background(colors.surface, RoundedCornerShape(24.dp))
+				.padding(24.dp),
+			horizontalAlignment = Alignment.CenterHorizontally
+		) {
+			CoolSlider(
+				value = t,
+				onValueChange = { t = it },
+				label = "t",
+				color = colors.primary
+			)
+			CoolSlider(
+				value = a,
+				onValueChange = { a = it },
+				label = "a",
+				color = colors.primary
+			)
+			CoolSlider(
+				value = b,
+				onValueChange = { b = it },
+				label = "b",
+				color = colors.primary
+			)
+			CoolSlider(
+				value = c,
+				onValueChange = { c = it },
+				label = "c",
+				color = colors.primary
+			)
+
+			Row {
+				Button(
+					onClick = {
+						t = 0f
+						a = 0.2f
+						b = 0.5f
+						c = 0.8f
+					},
+				) {
+					Text("Reset")
+				}
+			}
+		}
+	}
+}

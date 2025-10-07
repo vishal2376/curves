@@ -5,20 +5,11 @@ import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
 
 val DarkColorScheme = darkColorScheme(
-	primary = MochaLavender,
-	onPrimary = MochaSurface,
-	secondary = MochaPink,
-	onSecondary = MochaSurface,
-	background = MochaBase,
-	onBackground = MochaText,
-	surface = MochaSurface,
-	onSurface = MochaText,
-	primaryContainer = MochaOverlay,
-	onPrimaryContainer = MochaText,
-	secondaryContainer = MochaOverlay,
-	onSecondaryContainer = MochaSubtext,
-	tertiary = MochaBlue,
-	onTertiary = MochaSurface
+	primary = lavender,
+	background = black,
+	onBackground = white,
+	primaryContainer = gray,
+	onPrimaryContainer = white
 )
 
 
