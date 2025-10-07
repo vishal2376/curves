@@ -24,6 +24,7 @@ import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Path
 import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.unit.dp
+import com.vishal2376.curves.core.presentation.theme.MochaSurface
 import com.vishal2376.curves.demo.presentation.common.components.CoolSlider
 import com.vishal2376.curves.demo.presentation.common.utils.lerpOffset
 
@@ -62,9 +63,9 @@ fun BeizerCurveScreen() {
 			val t3 = lerpOffset(t1, t2, t)
 
 			// draw lines
-			drawLine(colors.primaryContainer, p0, p1, strokeWidth = 8f)
-			drawLine(colors.primaryContainer, p1, p2, strokeWidth = 8f)
-			drawLine(colors.primaryContainer, t1, t2, strokeWidth = 8f)
+			drawLine(MochaSurface, p0, p1, strokeWidth = 8f)
+			drawLine(MochaSurface, p1, p2, strokeWidth = 8f)
+			drawLine(MochaSurface, t1, t2, strokeWidth = 8f)
 
 			// draw points
 			drawCircle(colors.primary, radius = 20f, center = p0)

@@ -31,9 +31,15 @@ val MochaMauve = Color(0xFFCBA6F7)
 
 val lavender = Color(0xFFD0BCFF)
 val black = Color(0xFF0D0D0D)
-val gray = Color(0xFF1A1A1A)
+val gray = Color(0xFF121212)
 val white = Color(0xFFEBEBEB)
 
+
+val NeonYellow = Color(0xFFFFD600)
+val ElectricAmber = Color(0xFFFFC107)
+val DeepBlue = Color(0xFF001122)
+val DarkBackground = Color(0xFF010A1A)
+val WarmOrange = Color(0xFFFF9100)
 
 val SoftLavender = Color(0xFFB18AFF)
 val SoftCyan = Color(0xFF6EE7E7)
