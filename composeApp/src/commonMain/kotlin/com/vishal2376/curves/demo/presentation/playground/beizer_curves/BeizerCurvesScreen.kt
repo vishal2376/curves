@@ -92,7 +92,15 @@ fun BeizerCurveScreen() {
 			// draw curve
 			val path = Path().apply {
 				moveTo(p0.x, p0.y)
-				quadraticTo(p1.x, p1.y, p2.x, p2.y)
+
+				val steps = 300
+				for (i in 1..(steps * t).toInt()) {
+					val tt = i / steps.toFloat()
+					val q0 = lerpOffset(p0, p1, tt)
+					val q1 = lerpOffset(p1, p2, tt)
+					val curvePoint = lerpOffset(q0, q1, tt)
+					lineTo(curvePoint.x, curvePoint.y)
+				}
 			}
 
 			drawPath(
