@@ -8,6 +8,7 @@ import androidx.compose.animation.core.rememberInfiniteTransition
 import androidx.compose.animation.core.tween
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
@@ -72,10 +73,24 @@ fun ExperimentCurvesScreen() {
 		horizontalAlignment = Alignment.CenterHorizontally
 	) {
 
-		Box(
+		Column(
 			modifier = Modifier.weight(1f),
-			contentAlignment = Alignment.Center
+			horizontalAlignment = Alignment.CenterHorizontally,
+			verticalArrangement = Arrangement.spacedBy(100.dp, Alignment.CenterVertically)
 		) {
+			Box(
+				modifier = Modifier.fillMaxWidth(.8f)
+					.ribbon(
+						brush = Brush.verticalGradient(listOf(colors.primary, colors.error)),
+						loops = loops,
+					)
+					.background(colors.surface, RoundedCornerShape(24.dp))
+					.border(1.dp, colors.primary, RoundedCornerShape(24.dp))
+					.padding(32.dp, 24.dp),
+				contentAlignment = Alignment.Center
+			) {
+				Text("Custom Button", fontSize = 20.sp, color = colors.primary)
+			}
 			Box(
 				modifier = Modifier.fillMaxWidth(.8f)
 					.ribbon(
