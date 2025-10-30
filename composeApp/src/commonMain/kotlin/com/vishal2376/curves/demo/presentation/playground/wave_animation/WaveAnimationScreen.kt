@@ -4,6 +4,7 @@ import androidx.compose.animation.core.EaseInBounce
 import androidx.compose.animation.core.EaseInOutBounce
 import androidx.compose.animation.core.EaseOutBack
 import androidx.compose.animation.core.EaseOutBounce
+import androidx.compose.animation.core.EaseOutQuad
 import androidx.compose.animation.core.LinearEasing
 import androidx.compose.animation.core.RepeatMode
 import androidx.compose.animation.core.animateFloat
@@ -60,10 +61,10 @@ fun WaveAnimationScreen() {
 
 	val infiniteTransition2 = rememberInfiniteTransition(label = "scale motion")
 	val scaleProgress by infiniteTransition2.animateFloat(
-		initialValue = 0.8f,
+		initialValue = 0.5f,
 		targetValue = 1f,
 		animationSpec = infiniteRepeatable(
-			animation = tween(durationMillis = 1000, easing = EaseInBounce),
+			animation = tween(durationMillis = 1000, easing = EaseOutQuad),
 			repeatMode = RepeatMode.Reverse
 		),
 		label = "scale"
