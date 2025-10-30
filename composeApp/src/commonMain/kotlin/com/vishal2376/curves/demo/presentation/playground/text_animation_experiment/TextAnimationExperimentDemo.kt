@@ -1,14 +1,14 @@
-package com.vishal2376.curves.demo.presentation.playground.experiment_curves_3
+package com.vishal2376.curves.demo.presentation.playground.text_animation_experiment
 
 import androidx.compose.runtime.Composable
 import com.vishal2376.curves.core.presentation.app.CurvesDemo
 import com.vishal2376.curves.core.presentation.components.BaseCurvesScreen
 
-object ExperimentCurves3Demo : CurvesDemo {
+object TextAnimationExperimentDemo : CurvesDemo {
 	override val title: String
-		get() = "Experiment Curves 3"
+		get() = "Text Animation (Experiment)"
 	override val route: String
-		get() = "experiment_curves_3"
+		get() = "text_animation_experiment"
 
 	@Composable
 	override fun BaseScreen(onClickBack: () -> Unit) {
@@ -16,7 +16,7 @@ object ExperimentCurves3Demo : CurvesDemo {
 			title = title,
 			onClickBack = onClickBack
 		) {
-			ExperimentCurves3Screen()
+			TextAnimationExperimentScreen()
 		}
 	}
 }

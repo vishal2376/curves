@@ -1,4 +1,4 @@
-package com.vishal2376.curves.demo.presentation.playground.experiment_curves_2
+package com.vishal2376.curves.demo.presentation.playground.spiral_animation
 
 import androidx.compose.animation.core.LinearEasing
 import androidx.compose.animation.core.RepeatMode
@@ -30,7 +30,7 @@ import com.vishal2376.curves.demo.presentation.common.components.CustomLabel
 import com.vishal2376.curves.demo.presentation.common.utils.polarLineTo
 
 @Composable
-fun ExperimentCurves2Screen() {
+fun SpiralAnimationScreen() {
 
 	val colors = MaterialTheme.colorScheme
 

@@ -1,4 +1,4 @@
-package com.vishal2376.curves.demo.presentation.playground.experiment_curves
+package com.vishal2376.curves.demo.presentation.playground.ribbon_animation
 
 import androidx.compose.animation.core.LinearEasing
 import androidx.compose.animation.core.RepeatMode
@@ -45,7 +45,7 @@ import kotlin.math.max
 import kotlin.math.min
 
 @Composable
-fun ExperimentCurvesScreen() {
+fun RibbonAnimationScreen() {
 
 	val colors = MaterialTheme.colorScheme
 

@@ -1,4 +1,4 @@
-package com.vishal2376.curves.demo.presentation.playground.text_animation
+package com.vishal2376.curves.demo.presentation.playground.text_animation_experiment
 
 import androidx.compose.animation.core.Animatable
 import androidx.compose.animation.core.tween
@@ -30,7 +30,7 @@ import com.vishal2376.curves.core.presentation.theme.SoftBlue
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
 @Composable
-fun TextAnimationScreen() {
+fun TextAnimationExperimentScreen() {
 
 	val colors = MaterialTheme.colorScheme
 
@@ -110,8 +110,8 @@ fun TextAnimationScreen() {
 
 @Preview
 @Composable
-private fun TextAnimationScreenPreview() {
+private fun TextAnimationExperimentScreenPreview() {
 	CurvesTheme(darkTheme = true, dynamicColor = false) {
-		TextAnimationScreen()
+		TextAnimationExperimentScreen()
 	}
 }

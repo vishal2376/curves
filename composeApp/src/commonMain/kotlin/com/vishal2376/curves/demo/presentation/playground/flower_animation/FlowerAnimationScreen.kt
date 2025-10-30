@@ -1,4 +1,4 @@
-package com.vishal2376.curves.demo.presentation.playground.experiment_curves_3
+package com.vishal2376.curves.demo.presentation.playground.flower_animation
 
 import androidx.compose.animation.core.LinearEasing
 import androidx.compose.animation.core.RepeatMode
@@ -38,7 +38,7 @@ import kotlin.math.PI
 import kotlin.math.sin
 
 @Composable
-fun ExperimentCurves3Screen() {
+fun FlowerAnimationScreen() {
 
 	val colors = MaterialTheme.colorScheme
 	val resolution = 300
