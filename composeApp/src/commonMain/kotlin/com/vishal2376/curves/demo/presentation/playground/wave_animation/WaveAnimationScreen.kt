@@ -1,5 +1,9 @@
 package com.vishal2376.curves.demo.presentation.playground.wave_animation
 
+import androidx.compose.animation.core.EaseInBounce
+import androidx.compose.animation.core.EaseInOutBounce
+import androidx.compose.animation.core.EaseOutBack
+import androidx.compose.animation.core.EaseOutBounce
 import androidx.compose.animation.core.LinearEasing
 import androidx.compose.animation.core.RepeatMode
 import androidx.compose.animation.core.animateFloat
@@ -48,10 +52,21 @@ fun WaveAnimationScreen() {
 		initialValue = 0f,
 		targetValue = 360f,
 		animationSpec = infiniteRepeatable(
-			animation = tween(durationMillis = 2000, easing = LinearEasing),
+			animation = tween(durationMillis = 2500, easing = LinearEasing),
 			repeatMode = RepeatMode.Restart
 		),
 		label = "phase"
+	)
+
+	val infiniteTransition2 = rememberInfiniteTransition(label = "scale motion")
+	val scaleProgress by infiniteTransition2.animateFloat(
+		initialValue = 0.8f,
+		targetValue = 1f,
+		animationSpec = infiniteRepeatable(
+			animation = tween(durationMillis = 1000, easing = EaseInBounce),
+			repeatMode = RepeatMode.Reverse
+		),
+		label = "scale"
 	)
 
 	Box(
@@ -86,7 +101,7 @@ fun WaveAnimationScreen() {
 				)
 			)
 
-			drawCircle(SoftRed, radius * phase / 360f, style = Stroke(width = 10f))
+			drawCircle(SoftRed, radius * scaleProgress, style = Stroke(width = 10f))
 		}
 	}
 }
@@ -96,8 +111,8 @@ private fun wavePath(resolution: Int, radius: Float, phase: Float, origin: Offse
 	val wavePath = Path()
 
 	val amplitude = 50f
-	val frequency = 6
-	val newRadius = radius + 150f
+	val frequency = 10
+	val newRadius = radius + 200f
 
 
 	(0..resolution).forEach { i ->
