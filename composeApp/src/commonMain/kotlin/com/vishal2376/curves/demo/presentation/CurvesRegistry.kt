@@ -5,6 +5,7 @@ import com.vishal2376.curves.demo.presentation.playground.beizer_curves.BeizerCu
 import com.vishal2376.curves.demo.presentation.playground.experiment_curves.ExperimentCurvesDemo
 import com.vishal2376.curves.demo.presentation.playground.experiment_curves_2.ExperimentCurves2Demo
 import com.vishal2376.curves.demo.presentation.playground.experiment_curves_3.ExperimentCurves3Demo
+import com.vishal2376.curves.demo.presentation.playground.sequence_animation_experiment.SequenceAnimationExperimentDemo
 import com.vishal2376.curves.demo.presentation.playground.text_animation.TextAnimationDemo
 import com.vishal2376.curves.demo.presentation.playground.text_reveal_animation.TextRevealAnimationDemo
 import com.vishal2376.curves.demo.presentation.playground.wave_animation.WaveAnimationDemo
@@ -12,11 +13,12 @@ import com.vishal2376.curves.demo.presentation.playground.wave_animation.WaveAni
 object CurvesRegistry {
 	val demos: List<CurvesDemo> = listOf(
 		BeizerCurvesDemo,
-		TextAnimationDemo,
-		TextRevealAnimationDemo,
-		ExperimentCurvesDemo,
 		ExperimentCurves2Demo,
 		ExperimentCurves3Demo,
-		WaveAnimationDemo
+		WaveAnimationDemo,
+		ExperimentCurvesDemo,
+		SequenceAnimationExperimentDemo,
+		TextAnimationDemo,
+		TextRevealAnimationDemo,
 	)
 }
