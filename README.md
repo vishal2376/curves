@@ -32,6 +32,7 @@ This project is not a finished app , it’s a space for **learning, prototyping,
 
 https://github.com/user-attachments/assets/00efbd0c-311c-498c-9ae6-9c415a39bb0e
 
+https://github.com/user-attachments/assets/ff8072a2-f281-4b59-99f3-401789f1da9e
 
 ## 🚀 Get Started  
 
