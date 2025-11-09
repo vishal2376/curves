@@ -4,11 +4,11 @@ import androidx.compose.runtime.Composable
 import com.vishal2376.curves.core.presentation.app.CurvesDemo
 import com.vishal2376.curves.core.presentation.components.BaseCurvesScreen
 
-object ComplexTextAnimationDemo : CurvesDemo {
+object SplitTextAnimationDemo : CurvesDemo {
 	override val title: String
-		get() = "Complex Text Animation"
+		get() = "Split Text Animation"
 	override val route: String
-		get() = "complex_text_animation"
+		get() = "split_text_animation"
 
 	@Composable
 	override fun BaseScreen(onClickBack: () -> Unit) {
@@ -16,7 +16,7 @@ object ComplexTextAnimationDemo : CurvesDemo {
 			title = title,
 			onClickBack = onClickBack
 		) {
-			ComplexTextAnimationScreen()
+			SplitTextAnimationScreen()
 		}
 	}
 }
