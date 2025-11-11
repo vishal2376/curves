@@ -1,4 +1,4 @@
-package com.vishal2376.curves.demo.presentation.playground.complex_text_animation
+package com.vishal2376.curves.demo.presentation.playground.split_text_animation
 
 import androidx.compose.runtime.Composable
 import com.vishal2376.curves.core.presentation.app.CurvesDemo
