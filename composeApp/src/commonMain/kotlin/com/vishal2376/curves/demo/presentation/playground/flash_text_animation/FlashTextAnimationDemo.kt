@@ -1,14 +1,14 @@
-package com.vishal2376.curves.demo.presentation.playground.text_animation
+package com.vishal2376.curves.demo.presentation.playground.flash_text_animation
 
 import androidx.compose.runtime.Composable
 import com.vishal2376.curves.core.presentation.app.CurvesDemo
 import com.vishal2376.curves.core.presentation.components.BaseCurvesScreen
 
-object TextAnimationDemo : CurvesDemo {
+object FlashTextAnimationDemo : CurvesDemo {
 	override val title: String
-		get() = "Text Animation"
+		get() = "Flash Text Animation"
 	override val route: String
-		get() = "text_animation"
+		get() = "flash_text_animation"
 
 	@Composable
 	override fun BaseScreen(onClickBack: () -> Unit) {
@@ -16,7 +16,7 @@ object TextAnimationDemo : CurvesDemo {
 			title = title,
 			onClickBack = onClickBack
 		) {
-			TextAnimationScreen()
 		}
+			FlashTextAnimationScreen()
 	}
 }
