@@ -5,6 +5,7 @@ import com.vishal2376.curves.demo.presentation.playground.beizer_curves.BeizerCu
 import com.vishal2376.curves.demo.presentation.playground.character_animation.CharacterAnimationDemo
 import com.vishal2376.curves.demo.presentation.playground.flash_text_animation.FlashTextAnimationDemo
 import com.vishal2376.curves.demo.presentation.playground.flower_animation.FlowerAnimationDemo
+import com.vishal2376.curves.demo.presentation.playground.proximity_animation_experiment.ProximityAnimationExperimentDemo
 import com.vishal2376.curves.demo.presentation.playground.ribbon_animation.RibbonAnimationDemo
 import com.vishal2376.curves.demo.presentation.playground.sequence_animation_experiment.SequenceAnimationExperimentDemo
 import com.vishal2376.curves.demo.presentation.playground.spiral_animation.SpiralAnimationDemo
@@ -23,6 +24,7 @@ object CurvesRegistry {
 		SequenceAnimationExperimentDemo,
 		TextAnimationExperimentDemo,
 		TextRevealAnimationDemo,
+		ProximityAnimationExperimentDemo,
 		SplitTextAnimationDemo,
 		FlashTextAnimationDemo,
 		CharacterAnimationDemo
