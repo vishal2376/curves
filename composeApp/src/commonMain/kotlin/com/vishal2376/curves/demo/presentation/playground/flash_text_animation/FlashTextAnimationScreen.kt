@@ -20,7 +20,6 @@ import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
-import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.drawscope.clipRect
@@ -36,7 +35,7 @@ import com.vishal2376.curves.core.presentation.theme.CurvesTheme
 import com.vishal2376.curves.core.presentation.theme.SoftBlue
 import org.jetbrains.compose.ui.tooling.preview.Preview
 import kotlin.math.PI
-import kotlin.math.sin
+import kotlin.math.cos
 
 @Composable
 fun FlashTextAnimationScreen() {
@@ -47,13 +46,13 @@ fun FlashTextAnimationScreen() {
 	val clipProgress = remember { mutableStateOf(0.4f) }
 
 	val delay = 0.9f
-	val globalProgress = remember { Animatable(0f) }
+	val globalProgress = remember { Animatable(1f) }
 
 	val isRotationEnabled = remember { mutableStateOf(false) }
 
 	LaunchedEffect(Unit) {
 		globalProgress.animateTo(
-			1f,
+			0f,
 			animationSpec = infiniteRepeatable(
 				animation = tween(1000, easing = LinearEasing),
 				repeatMode = RepeatMode.Restart
@@ -94,7 +93,7 @@ fun FlashTextAnimationScreen() {
 				val invClipHeight = rect.height * (1f - clipProgress.value)
 
 				val phase = (globalProgress.value + textIndex * delay).mod(1f)
-				val wave = (sin(phase * 2 * PI).toFloat() + 1f) / 2f
+				val wave = (cos(phase * 2 * PI).toFloat() + 1f) / 2f
 
 				(-echo..echo).forEach { i ->
 					val offsetY = baseOffset.y + i * yOffset * wave
