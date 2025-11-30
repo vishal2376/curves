@@ -112,9 +112,7 @@ fun SplitTextAnimationScreen() {
 			)
 
 			drawText(
-				textMeasurer = textMeasurer,
-				text = text,
-				style = textStyle,
+				textLayoutResult = baseMeasurement,
 				topLeft = baseOffset
 			)
 
@@ -142,9 +140,7 @@ fun SplitTextAnimationScreen() {
 
 				clipRect(top = top, bottom = bottom) {
 					drawText(
-						textMeasurer = textMeasurer,
-						text = text,
-						style = echoStyle,
+						textLayoutResult = echoMeasurement,
 						topLeft = echoOffset
 					)
 				}
