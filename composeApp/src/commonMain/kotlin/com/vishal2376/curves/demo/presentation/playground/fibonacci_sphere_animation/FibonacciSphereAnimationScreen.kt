@@ -46,6 +46,7 @@ fun FibonacciSphereAnimationScreen() {
 	var pointCount by remember { mutableStateOf(300f) }
 	var rotationSpeed by remember { mutableStateOf(0.005f) }
 	var baseRadius by remember { mutableStateOf(10f) }
+	var zNorm by remember { mutableStateOf(0.5f) }
 	var hue1 by remember { mutableStateOf(180f) }
 	var hue2 by remember { mutableStateOf(260f) }
 
@@ -60,6 +61,7 @@ fun FibonacciSphereAnimationScreen() {
 				pointCount = pointCount.toInt(),
 				speed = rotationSpeed,
 				maxRadius = baseRadius,
+				zNormValue = zNorm,
 				colorStart = Color.hsl(hue1, 1f, 0.5f),
 				colorEnd = Color.hsl(hue2, 1f, 0.5f)
 			)
@@ -100,6 +102,14 @@ fun FibonacciSphereAnimationScreen() {
 				end = 20f
 			)
 			CoolSlider(
+				value = zNorm,
+				onValueChange = { zNorm = it },
+				label = "Z Norm",
+				color = MaterialTheme.colorScheme.primary,
+				start = 0f,
+				end = 1f
+			)
+			CoolSlider(
 				value = hue1,
 				onValueChange = { hue1 = it },
 				label = "Color 1",
@@ -125,6 +135,7 @@ fun FibonacciSphere(
 	pointCount: Int,
 	speed: Float,
 	maxRadius: Float,
+	zNormValue: Float,
 	colorStart: Color,
 	colorEnd: Color,
 ) {
@@ -168,7 +179,7 @@ fun FibonacciSphere(
 		transformPoints.forEach { point ->
 
 			// fake 3d effect
-			val zNorm = (point.z + 2f) / 3f
+			val zNorm = lerp(point.z, ((point.z + 2f) / 3f), zNormValue)
 			val radius = maxRadius * lerp(0.2f, 1f, zNorm)
 			val alpha = (zNorm - 0.2f).coerceIn(0.1f, 1f)
 
