@@ -8,6 +8,7 @@ import com.vishal2376.curves.demo.presentation.playground.flash_text_animation.F
 import com.vishal2376.curves.demo.presentation.playground.flower_animation.FlowerAnimationDemo
 import com.vishal2376.curves.demo.presentation.playground.illusion_animation.IllusionAnimationDemo
 import com.vishal2376.curves.demo.presentation.playground.proximity_animation_experiment.ProximityAnimationExperimentDemo
+import com.vishal2376.curves.demo.presentation.playground.qr_3d_animation.Qr3dAnimationDemo
 import com.vishal2376.curves.demo.presentation.playground.ribbon_animation.RibbonAnimationDemo
 import com.vishal2376.curves.demo.presentation.playground.sci_fi_door_animation.SciFiDoorAnimationDemo
 import com.vishal2376.curves.demo.presentation.playground.sequence_animation_experiment.SequenceAnimationExperimentDemo
@@ -33,6 +34,7 @@ object CurvesRegistry {
 		CharacterAnimationDemo,
 		SciFiDoorAnimationDemo,
 		FibonacciSphereAnimationDemo,
-		IllusionAnimationDemo
+		IllusionAnimationDemo,
+		Qr3dAnimationDemo
 	)
 }

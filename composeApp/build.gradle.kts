@@ -45,6 +45,10 @@ kotlin {
 
 			implementation(libs.material.icons.core)
 			implementation(libs.navigation.compose)
+
+			// QR
+			implementation(libs.qrcode.kotlin)
+
 		}
 		commonTest.dependencies {
 			implementation(libs.kotlin.test)
